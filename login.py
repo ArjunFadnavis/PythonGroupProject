@@ -34,7 +34,6 @@ for line in file:
         #         break
     else:
         continue
-# test
 # def password_c    heck(password):
 #     while 0 == 0:
 #         for characters in password:
