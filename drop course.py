@@ -14,13 +14,11 @@ def main():
                 input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
         elif choice == 2:
             drop_course(id, course_list, roster_list)
-            choice = int(
-                input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
+            choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
         elif choice == 3:
             pass
         elif choice == 4:
             pass
-        #testfefrergfffffd
         else:
             quit()
 
