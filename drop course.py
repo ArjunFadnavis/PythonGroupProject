@@ -9,22 +9,30 @@ def main():
     uppercase_only = []
     nums_only = []
     letters_only = []
-    login()
-    choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
-    while choice != 0:
-        if choice == 1:
-            add_course(id, course_list, roster_list, max_size_list)
-            choice = int(
-                input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
-        elif choice == 2:
-            drop_course(id, course_list, roster_list)
-            choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
-        elif choice == 3:
-            pass
-        elif choice == 4:
-            pass
-        else:
-            quit()
+
+    id = input('enter ID to login or 0 to quit ')
+    while id != '0':
+        login(id, student_list, lowercase_only, uppercase_only, nums_only, letters_only)
+        choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
+        while choice != 0:
+            if choice == 1:
+                add_course(id, course_list, roster_list, max_size_list)
+                choice = int(
+                    input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
+            elif choice == 2:
+                drop_course(id, course_list, roster_list)
+                choice = int(
+                    input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
+            elif choice == 3:
+                list_courses(id, course_list, roster_list)
+            elif choice == 4:
+                display_hours_bill(hours, cost)
+            else:
+                print('session ended')
+                quit()
+        print('session ended')
+        id = input('enter ID to login or 0 to quit ')
+
 
 
 def add_course(id, c_list, r_list, m_list):
@@ -83,27 +91,38 @@ def drop_course(id, c_list, r_list):
 
     # login function
 
-def login():
-    student_id = input('enter student id ')
+
+# lowercase, uppercase_only, nums only, letters only is for extra credit
+def login(id, student_list, lowercase_only, uppercase_only, nums_only, letters_only):
     file = open('passwords', 'r+')
-    for line in file:
-        if student_id in line:
+    while id not in ('1001', '1002', '1003', '1004'):
+        print('invalid ID')
+        id = input('enter ID ')
+    # file = list(file)
+    # file.reverse()
+    # going backwards to read updated info w/ passwords first
+    lines = file.readlines()
+    for line in reversed(lines):
+        if id in line:
             line = line.strip()
             # has no password
-            if line == student_id:
+            if line == id:
                 while True:
                     try:
                         pin = (input('enter pin '))
-                        if (student_id, pin) not in student_list:
+                        if (id, pin) not in student_list:
                             raise ()
                     except:
                         print('error invalid login')
-                        student_id = input('enter student id ')
+                        id = input('enter student id ')
+                        while id not in ('1001', '1002', '1003', '1004'):
+                            print('invalid ID')
+                            id = input('enter ID ')
                     else:
                         # sets password
                         while True:
                             try:
-                                password = input('enter a password ')
+                                password = input('choose a password ')
                                 # password strength check
                                 for characters in password:
                                     if characters.isupper():
@@ -136,7 +155,8 @@ def login():
                             except:
                                 continue
                             else:
-                                line = student_id + ' ' + password
+
+                                line = f'{id} {password} \n'
                                 file.write(line)
                                 break
                         break
@@ -144,16 +164,42 @@ def login():
             else:
                 # password is set
                 password = input('enter password ')
-                if line == f'{student_id} {password}':
+                if line == f'{id} {password}':
                     print('valid login')
                     break
                 else:
                     # incorrect password
-                    while line != f'{student_id} {password}':
+                    while line != f'{id} {password}':
                         print('invalid login')
-                        student_id = int(input('enter student id '))
+                        id = input('enter student id ')
                         password = input('enter password ')
+                    break
     file.close()
+
+
+# List Course
+def list_courses(id, c_list, r_list):
+    registered_courses = []
+    counted_courses = 0
+    for i in range(len(r_list)):
+        if id in r_list[i]:
+            counted_courses += 1
+            registered_courses.append(c_list)
+    print('You are currently registered in an total of', counted_courses, 'courses.')
+    print('The courses are: ', registered_courses)
+
+
+def display_hours_bill(hours, cost):
+    # -----------------------------------------------------------------
+    # This function displays the course hours and the cost of enrollment.
+    # It has two parameters.
+    # hours is the number of course hours.
+    # cost is the total cost of enrollment.
+    # This function displays the total number of credit hours and total
+    # cost of enrollment.
+    # -----------------------------------------------------------------
+    print('Total number of course hours:', hours)
+    print('Total cost of enrollment:', cost)
 
 
 main()
