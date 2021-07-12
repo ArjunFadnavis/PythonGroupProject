@@ -37,7 +37,6 @@ def main():
 
 
 # login function
-
 def login(id, student_list):
     file = open('passwords', 'r+')
     while id not in ('1001', '1002', '1003', '1004'):
