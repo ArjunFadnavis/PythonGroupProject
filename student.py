@@ -61,3 +61,4 @@ def list_courses(id, c_list, r_list):
             registered_courses.append(c_list)
     print('You are currently registered in an total of', counted_courses, 'courses.')
     print('The courses are: ', registered_courses)
+

@@ -9,3 +9,4 @@ def display_hours_bill(hours, cost):
     # -----------------------------------------------------------------
     print('Total number of course hours:', hours)
     print('Total cost of enrollment:', cost)
+
