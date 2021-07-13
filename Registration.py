@@ -2,6 +2,7 @@ from student import add_course
 from student import delete_course
 from student import list_course
 from billing import display_hours_bill
+from billing import calculate_hours_and_bill
 
 
 def main():
@@ -28,6 +29,7 @@ def main():
             elif choice == 3:
                 list_courses(id, course_list, roster_list)
             elif choice == 4:
+                calculate_hours_and_bill(id, in_state_list, r_list, course_hours)
                 display_hours_bill(hours, cost)
             else:
                 print('session ended')
@@ -42,8 +44,6 @@ def login(id, student_list):
     while id not in ('1001', '1002', '1003', '1004'):
         print('invalid ID')
         id = input('enter ID ')
-    # file = list(file)
-    # file.reverse()
     # going backwards to read updated info w/ passwords first
     lines = file.readlines()
     for line in reversed(lines):
@@ -114,8 +114,6 @@ def login(id, student_list):
 
 
 # List Course
-
-
 
 
 main()

@@ -4,13 +4,14 @@ from Registration import course_hours
 
 
 def calculate_hours_and_bill(id, i_s_list, r_list, h_list):
+    enrollment_price = 0
     # set tuition prices
     while str(id) in i_s_list:
         cost = 225
     else:
         cost = 850
     while id in 1001:
-       enrollment_price = cost * course_hours[0]
+        enrollment_price = cost * course_hours[0]
     while id in 1002:
         enrollment_price = cost * course_hours[1]
     while id in 1003:
@@ -21,11 +22,7 @@ def calculate_hours_and_bill(id, i_s_list, r_list, h_list):
     print("course hours registered for", enrollment_price / cost)
 
 
-
-
-
-
-#def display_hours_bill(hours, cost):
+def display_hours_bill(hours, cost):
     # -----------------------------------------------------------------
     # This function displays the course hours and the cost of enrollment.
     # It has two parameters.
@@ -34,5 +31,5 @@ def calculate_hours_and_bill(id, i_s_list, r_list, h_list):
     # This function displays the total number of credit hours and total
     # cost of enrollment.
     # -----------------------------------------------------------------
-#    print('Total number of course hours:', hours)
-#    print('Total cost of enrollment:', cost)
+    print('Total number of course hours:', hours)
+    print('Total cost of enrollment:', cost)
