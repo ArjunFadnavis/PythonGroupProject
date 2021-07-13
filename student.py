@@ -52,7 +52,7 @@ def drop_course(id, c_list, r_list):
         print('course dose not exist')
 
 
-def list_courses(id, c_list, r_list):
+def list_course(id, c_list, r_list):
     registered_courses = []
     counted_courses = 0
     for i in range(len(r_list)):
