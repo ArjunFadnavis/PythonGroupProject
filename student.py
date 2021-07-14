@@ -13,7 +13,7 @@ def add_course(id, c_list, r_list, m_list):
     # function has no return value.
     # -------------------------------------------------------------
     idstring = str(id)
-    course_choice = input('Enter course you want to add: ')
+    course_choice = input('Enter course you want to add: ').upper()
     if course_choice in c_list:
         print('Course: ', course_choice)
         course_index = int(c_list.index(course_choice))
@@ -52,7 +52,7 @@ def drop_course(id, c_list, r_list):
         print('course dose not exist')
 
 
-def list_course(id, c_list, r_list):
+def list_courses(id, c_list, r_list):
     registered_courses = []
     counted_courses = 0
     for i in range(len(r_list)):
