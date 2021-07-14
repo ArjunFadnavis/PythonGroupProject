@@ -28,9 +28,13 @@ def main():
                     input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
             elif choice == 3:
                 list_course(id, course_list, roster_list)
+                choice = int(
+                    input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
             elif choice == 4:
-                calculate_hours_and_bill(id, in_state_list, r_list, course_hours)
-                display_hours_bill(hours, cost)
+                calculate_hours_and_bill(id, in_state_list, roster_list, course_hours)
+                display_hours_bill(course_hours, cost)
+                choice = int(
+                    input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
             else:
                 print('session ended')
                 quit()

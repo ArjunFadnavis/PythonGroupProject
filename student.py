@@ -58,6 +58,6 @@ def list_course(id, c_list, r_list):
     for i in range(len(r_list)):
         if id in r_list[i]:
             counted_courses += 1
-            registered_courses.append(c_list)
+            registered_courses.append(c_list[i])
     print('You are currently registered in an total of', counted_courses, 'courses.')
     print('The courses are: ', registered_courses)
