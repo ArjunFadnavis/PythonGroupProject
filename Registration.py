@@ -1,5 +1,5 @@
 from student import add_course
-from student import drop_course
+#from student import drop_course
 from student import course_list
 from billing import display_hours_bill
 from billing import calculate_hours_and_bill
