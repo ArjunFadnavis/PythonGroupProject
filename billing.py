@@ -1,3 +1,8 @@
+from Registration import course_list
+from Registration import roster_list
+from Registration import course_hours
+
+
 def calculate_hours_and_bill(id, i_s_list, r_list, h_list):
     enrollment_price = 0
     # set tuition prices
