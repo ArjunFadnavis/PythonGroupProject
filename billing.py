@@ -9,14 +9,16 @@ def calculate_hours_and_bill(id, i_s_list, r_list, h_list):
     CSC102 = r_list[1]
     CSC103 = r_list[2]
     CSC104 = r_list[3]
-    while id in 101:
+    for id in CSC101:
         enrollment_price = cost * h_list[0]
-    while id in 102:
+    for id in CSC102:
         enrollment_price = enrollment_price + (cost * h_list[1])
-    while id in 103:
+    for id in CSC103:
         enrollment_price = enrollment_price + (cost * h_list[2])
-    while id in 100:
+    for id in CSC104:
         enrollment_price = enrollment_price + (cost * h_list[3])
+    course_hours = enrollment_price / cost
+    return enrollment_price, course_hours
     print("total cost:", enrollment_price)
     print("course hours registered for", enrollment_price / cost)
     # need to just return the values to the display_hours_bill function
