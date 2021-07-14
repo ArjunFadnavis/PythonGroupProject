@@ -27,7 +27,7 @@ def calculate_hours_and_bill(id, i_s_list, r_list, h_list):
     # where they will then be printed out
 
 
-def display_hours_bill(hours, cost):
+def display_hours_and_bill(hours, cost):
     # -----------------------------------------------------------------
     # This function displays the course hours and the cost of enrollment.
     # It has two parameters.
@@ -37,4 +37,4 @@ def display_hours_bill(hours, cost):
     # cost of enrollment.
     # -----------------------------------------------------------------
     print('Total number of course hours:', hours)
-    print('Total cost of enrollment:', cost)
+    print(f'Total cost of enrollment: ${cost}')

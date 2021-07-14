@@ -33,7 +33,7 @@ def main():
             elif choice == 4:
                 calculate_hours_and_bill(id, in_state_list, roster_list, course_hours)
                 hours, enrollment_price = calculate_hours_and_bill(id, in_state_list, roster_list, course_hours)
-                display_hours_bill(hours, enrollment_price)
+                display_hours_and_bill(hours, enrollment_price)
                 choice = int(
                     input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
             else:
