@@ -1,6 +1,6 @@
 from student import add_course
 from student import drop_course
-from student import course_list
+from student import list_course
 from billing import display_hours_bill
 from billing import calculate_hours_and_bill
 
@@ -27,10 +27,13 @@ def main():
                 choice = int(
                     input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
             elif choice == 3:
-                course_list(id, course_list, roster_list)
+                list_course(id, course_list, roster_list)
+                choice = int(
+                    input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
             elif choice == 4:
                 calculate_hours_and_bill(id, in_state_list, roster_list, course_hours)
-                display_hours_bill(course_hours, cost)
+                hours, enrollment_price = calculate_hours_and_bill(id, in_state_list, roster_list, course_hours)
+                display_hours_bill(hours, enrollment_price)
                 choice = int(
                     input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: '))
             else:
