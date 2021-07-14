@@ -10,10 +10,10 @@ def calculate_hours_and_bill(id, i_s_list, r_list, h_list):
         cost = 225
     else:
         cost = 850
-    CSC101 = [i[0] for i in roster_list] # these are lists of the student ids in the class
-    CSC102 = [i[1] for i in roster_list]
-    CSC103 = [i[2] for i in roster_list]
-    CSC104 = [i[3] for i in roster_list]
+    CSC101 = roster_list[0] # these are lists of the student ids in the class
+    CSC102 = roster_list[1]
+    CSC103 = roster_list[2]
+    CSC104 = roster_list[3]
     while id in 101:
         enrollment_price = cost * course_hours[0]
     while id in 102:
