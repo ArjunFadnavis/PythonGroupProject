@@ -10,7 +10,7 @@ def calculate_hours_and_bill(id, i_s_list, r_list, h_list):
     CSC103 = r_list[2]
     CSC104 = r_list[3]
     if id in CSC101:
-        enrollment_price = cost * course_hours[0]
+        enrollment_price = cost * h_list[0]
     if id in CSC102:
         enrollment_price = enrollment_price + (cost * h_list[1])
     if id in CSC103:
@@ -21,7 +21,7 @@ def calculate_hours_and_bill(id, i_s_list, r_list, h_list):
     return hours, enrollment_price
 
 
-def display_hours_bill(hours, cost):
+def display_hours_and_bill(hours, cost):
     # -----------------------------------------------------------------
     # This function displays the course hours and the cost of enrollment.
     # It has two parameters.
@@ -31,4 +31,4 @@ def display_hours_bill(hours, cost):
     # cost of enrollment.
     # -----------------------------------------------------------------
     print('Total number of course hours:', hours)
-    print('Total cost of enrollment:', cost)
+    print(f'Total cost of enrollment: ${cost}')

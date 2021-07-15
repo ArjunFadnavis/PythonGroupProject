@@ -14,7 +14,7 @@ def main():
     max_size_list = [3, 2, 1, 3]
     roster_list = [['1004', '1003'], ['1001'], ['1002'], []]
 
-    id = input('enter ID to login or 0 to quit ')
+    id = input('Enter ID to login or 0 to quit: ')
     while id != '0':
         # returning ID to make sure correct ID is passed into all other functions
         id = login(id, student_list)
@@ -32,24 +32,24 @@ def main():
             elif choice == 4:
                 calculate_hours_and_bill(id, in_state_list, roster_list, course_hours)
                 hours, enrollment_price = calculate_hours_and_bill(id, in_state_list, roster_list, course_hours)
-                display_hours_bill(hours, enrollment_price)
+                display_hours_and_bill(hours, enrollment_price)
                 choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, and 5 to replace password 0 to exit: '))
             elif choice == 5:
                 change_password()
                 choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, and 5 to replace password 0 to exit: '))
             else:
-                print('session ended')
+                print('Session ended')
                 quit()
-        print('session ended')
-        id = input('enter ID to login or 0 to quit ')
+        print('Session ended')
+        id = input('Enter ID to login or 0 to quit: ')
 
 
 # login function
 def login(id, student_list):
     file = open('passwords', 'r+')
     while id not in ('1001', '1002', '1003', '1004'):
-        print('invalid ID')
-        id = input('enter ID ')
+        print('Invalid ID')
+        id = input('Enter ID ')
     # going backwards to read updated info w/ passwords first
     lines = file.readlines()
     for line in reversed(lines):
@@ -59,42 +59,42 @@ def login(id, student_list):
             if line == id:
                 while True:
                     try:
-                        pin = (input('enter pin '))
+                        pin = (input('Enter pin: '))
                         if (id, pin) not in student_list:
                             raise ()
                     except:
-                        print('error invalid login')
-                        id = input('enter student id ')
+                        print('Error invalid login')
+                        id = input('Enter student ID: ')
                         while id not in ('1001', '1002', '1003', '1004'):
-                            print('invalid ID')
-                            id = input('enter ID ')
+                            print('Invalid ID')
+                            id = input('Enter ID: ')
                     else:
                         # sets password
                         while True:
                             try:
-                                password = input('choose a password ')
+                                password = input('Choose a password: ')
                                 # password strength check
                                 if len(password) < 8:
-                                    print('password must be 8 or more characters long')
+                                    print('Password must be 8 or more characters long')
                                     raise ()
                                 if password.isupper():
-                                    print('passwords must have mixed cases')
+                                    print('Passwords must have mixed cases')
                                     raise ()
                                 if password.islower():
-                                    print('passwords must have mixed cases')
+                                    print('Passwords must have mixed cases')
                                     raise ()
                                 if password.isnumeric():
-                                    print('passwords must have letters')
+                                    print('Passwords must have letters')
                                     raise ()
                                 if password.isalpha():
-                                    print('passwords must have numbers')
+                                    print('Passwords must have numbers')
                                     raise ()
                                 if password.isalnum():
-                                    print('passwords must have special characters')
+                                    print('Passwords must have special characters')
                                     raise ()
 
                             except:
-                                print('except works')
+                                print('Except works')
                                 continue
                             else:
 
@@ -105,16 +105,16 @@ def login(id, student_list):
 
             else:
                 # password is set
-                password = input('enter password ')
+                password = input('Enter password: ')
                 if line == f'{id} {password}':
-                    print('valid login')
+                    print('Valid login!')
                     break
                 else:
                     # incorrect password
                     while line != f'{id} {password}':
-                        print('invalid login')
-                        id = input('enter student id ')
-                        password = input('enter password ')
+                        print('Invalid login')
+                        id = input('Enter student ID: ')
+                        password = input('Enter password: ')
                     break
     file.close()
     return id
