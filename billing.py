@@ -1,5 +1,3 @@
-
-
 def calculate_hours_and_bill(id, i_s_list, r_list, h_list):
     enrollment_price = 0
     # set tuition prices
@@ -21,10 +19,6 @@ def calculate_hours_and_bill(id, i_s_list, r_list, h_list):
         enrollment_price = enrollment_price + (cost * h_list[3])
     hours = enrollment_price / cost
     return hours, enrollment_price
-    
-    
-    # need to just return the values to the display_hours_bill function
-    # where they will then be printed out
 
 
 def display_hours_bill(hours, cost):

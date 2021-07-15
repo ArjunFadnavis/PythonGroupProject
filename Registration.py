@@ -120,7 +120,4 @@ def login(id, student_list):
     return id
 
 
-# List Course
-
-
 main()
