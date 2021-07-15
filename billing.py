@@ -12,7 +12,7 @@ def calculate_hours_and_bill(id, i_s_list, r_list, h_list):
     CSC103 = r_list[2]
     CSC104 = r_list[3]
     if id in CSC101:
-        enrollment_price = cost * course_hours[0]
+        enrollment_price = cost * h_list[0]
     if id in CSC102:
         enrollment_price = enrollment_price + (cost * h_list[1])
     if id in CSC103:
