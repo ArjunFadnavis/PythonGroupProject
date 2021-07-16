@@ -30,5 +30,5 @@ def display_hours_and_bill(hours, cost):
     # This function displays the total number of credit hours and total
     # cost of enrollment.
     # -----------------------------------------------------------------
-    print('Total number of course hours:', hours)
+    print('Total number of course hours: %d' %hours)
     print(f'Total cost of enrollment: ${cost}')
