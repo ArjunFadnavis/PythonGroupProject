@@ -45,11 +45,11 @@ def drop_course(id, c_list, r_list):
         course_index = int(c_list.index(course))
         if id in r_list[course_index]:
             r_list[course_index].remove(id)
-            print('updated roster:', r_list)
+            print('Updated roster:', r_list)
         else:
-            print('student not enrolled')
+            print('Student not enrolled')
     else:
-        print('course dose not exist')
+        print('Course does not exist')
 
 
 def list_courses(id, c_list, r_list):
@@ -59,5 +59,8 @@ def list_courses(id, c_list, r_list):
         if id in r_list[i]:
             counted_courses += 1
             registered_courses.append(c_list[i])
-    print('You are currently registered in an total of', counted_courses, 'courses.')
-    print('The courses are: ', registered_courses)
+    
+    print('Registered Courses: ', registered_courses)
+    for course in registered_courses:
+        print(course)
+    print('Total number:', counted_courses)
