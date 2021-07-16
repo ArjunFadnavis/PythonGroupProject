@@ -1,8 +1,8 @@
 from student import add_course
 from student import drop_course
-from student import list_course
+from student import list_courses
 from Change_Password import change_password
-from billing import display_hours_bill
+from billing import display_hours_and_bill
 from billing import calculate_hours_and_bill
 
 
@@ -18,25 +18,25 @@ def main():
     while id != '0':
         # returning ID to make sure correct ID is passed into all other functions
         id = login(id, student_list)
-        choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, and 5 to exit 0 to exit: '))
+        choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 5 to replace password, and 0 to exit: '))
         while choice != 0:
             if choice == 1:
                 add_course(id, course_list, roster_list, max_size_list)
-                choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, and 5 to replace password 0 to exit: '))
+                choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 5 to replace password, and 0 to exit: '))
             elif choice == 2:
                 drop_course(id, course_list, roster_list)
-                choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, and 5 to replace password 0 to exit: '))
+                choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 5 to replace password, and 0 to exit: '))
             elif choice == 3:
-                list_course(id, course_list, roster_list)
-                choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, and 5 to replace password 0 to exit: '))
+                list_courses(id, course_list, roster_list)
+                choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 5 to replace password, and 0 to exit: '))
             elif choice == 4:
                 calculate_hours_and_bill(id, in_state_list, roster_list, course_hours)
                 hours, enrollment_price = calculate_hours_and_bill(id, in_state_list, roster_list, course_hours)
                 display_hours_and_bill(hours, enrollment_price)
-                choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, and 5 to replace password 0 to exit: '))
+                choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 5 to replace password, and 0 to exit: '))
             elif choice == 5:
                 change_password()
-                choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, and 5 to replace password 0 to exit: '))
+                choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 5 to replace password and 0 to exit: '))
             else:
                 print('Session ended')
                 quit()
@@ -94,12 +94,12 @@ def login(id, student_list):
                                     raise ()
 
                             except:
-                                print('Except works')
                                 continue
                             else:
 
                                 line = f'{id} {password} \n'
                                 file.write(line)
+                                break
 
                         break
 
