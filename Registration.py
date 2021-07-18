@@ -37,9 +37,12 @@ def main():
             elif choice == 5:
                 change_password()
                 choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 5 to replace password and 0 to exit: '))
-            else:
+            elif choice == 0:
                 print('Session ended')
                 quit()
+            else:
+                print('invalid input')
+                choice = int(input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 5 to replace password and 0 to exit: '))
         print('Session ended')
         id = input('Enter ID to login or 0 to quit: ')
 

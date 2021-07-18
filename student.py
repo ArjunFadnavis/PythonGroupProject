@@ -31,7 +31,6 @@ def add_course(id, c_list, r_list, m_list):
             else:
                 print('Course added')
                 r_list[course_index].append(idstring)
-                print('Updated roster:', r_list)
                 break
     else:
         print('Error: Course not found')
