@@ -1,3 +1,9 @@
+#
+# Authors - Arjun Fadnavis, Theresa Granger, Tiffany Anderson, Alexandre Eldredge
+# 07/18/2021
+# This function allows users to change their passwords
+#
+
 def change_password():
     student_id = input('enter student id: ')
     while student_id not in ['1001', '1002', '1003', '1004']:
