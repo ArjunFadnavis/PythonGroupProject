@@ -1,3 +1,12 @@
+# ----------------------------------------------------------------
+# Author:  Arjun Fadnavis, Alexandre Eldredge, Tiffany Anderson, Theresa Granger
+# Date:  07/18/2021
+#
+# This program creates a class registration system.  It allows
+# students to add courses, drop courses and list courses they are
+# registered for.
+# -----------------------------------------------------------------
+
 from student import add_course
 from student import drop_course
 from student import list_courses
