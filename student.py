@@ -21,7 +21,6 @@ def add_course(id, c_list, r_list, m_list):
 #         print('Rostercheck: ', rostercheck)
         maxcheck = m_list[course_index]
 #         print('Max Cap check: ', maxcheck)
-        
         if str(id) in rostercheck:
             print('Error, you are already enrolled')
         
@@ -44,7 +43,7 @@ def drop_course(id, c_list, r_list):
         course_index = int(c_list.index(course))
         if id in r_list[course_index]:
             r_list[course_index].remove(id)
-            print('Updated roster:', r_list)
+            print('Course removed')
         else:
             print('Student not enrolled')
     else:
@@ -59,7 +58,7 @@ def list_courses(id, c_list, r_list):
             counted_courses += 1
             registered_courses.append(c_list[i])
     
-    print('Registered Courses: ', registered_courses)
+    print('Registered Courses: ')
     for course in registered_courses:
         print(course)
     print('Total number:', counted_courses)
