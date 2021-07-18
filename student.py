@@ -37,7 +37,7 @@ def add_course(id, c_list, r_list, m_list):
 
 # removes courses
 def drop_course(id, c_list, r_list):
-    course = input('enter course you want to drop: ')
+    course = input('Enter course you want to drop: ')
     course = course.upper()
     if course in c_list:
         course_index = int(c_list.index(course))
