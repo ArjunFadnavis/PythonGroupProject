@@ -21,17 +21,17 @@ def add_course(id, c_list, r_list, m_list):
 #         print('Rostercheck: ', rostercheck)
         maxcheck = m_list[course_index]
 #         print('Max Cap check: ', maxcheck)
-        for course in c_list:
-            if str(id) in rostercheck:
-                print('Error, you are already enrolled')
-                break
-            elif len(rostercheck) >= maxcheck:
-                print('Error, max capacity')
-                break
-            else:
-                print('Course added')
-                r_list[course_index].append(idstring)
-                break
+        
+        if str(id) in rostercheck:
+            print('Error, you are already enrolled')
+        
+        elif len(rostercheck) >= maxcheck:
+            print('Error, max capacity')
+            
+        else:
+            print('Course added')
+            r_list[course_index].append(idstring)
+            
     else:
         print('Error: Course not found')
 
