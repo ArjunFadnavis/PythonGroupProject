@@ -1,3 +1,11 @@
+# ----------------------------------------------------------------
+# Author:  Arjun Fadnavis, Alexandre Eldredge, Tiffany Anderson, Theresa Granger
+# Date:  07/18/2021
+#
+# This program consists of the student module for the class registration system.
+# It defines 3 functions: add_course, drop_course, and list_courses.
+# -----------------------------------------------------------------
+
 def add_course(id, c_list, r_list, m_list):
     # ------------------------------------------------------------
     # This function adds a student to a course.  It has four
