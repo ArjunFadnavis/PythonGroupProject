@@ -12,7 +12,7 @@ def add_course(id, c_list, r_list, m_list):
     # roster and display a message if there is no problem.  This
     # function has no return value.
     # -------------------------------------------------------------
-    idstring = str(id)
+    
     course_choice = input('Enter course you want to add: ').upper()
     if course_choice in c_list:
         print('Course: ', course_choice)
@@ -21,7 +21,7 @@ def add_course(id, c_list, r_list, m_list):
 #         print('Rostercheck: ', rostercheck)
         maxcheck = m_list[course_index]
 #         print('Max Cap check: ', maxcheck)
-        if str(id) in rostercheck:
+        if id in rostercheck:
             print('Error, you are already enrolled')
         
         elif len(rostercheck) >= maxcheck:
@@ -29,7 +29,7 @@ def add_course(id, c_list, r_list, m_list):
             
         else:
             print('Course added')
-            r_list[course_index].append(idstring)
+            r_list[course_index].append(id)
             
     else:
         print('Error: Course not found')
