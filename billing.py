@@ -1,4 +1,23 @@
+# 
+# Authors: Arjun Fadnavis, Alexandre Eldredge, Tiffany Anderson, Theresa Granger
+# Date: July 18th, 2021
+#
+# The billing module calculates the hours and classes 
+# For each student and then returns the cost of enrollement
+# And hours enrolled in
+
+
 def calculate_hours_and_bill(id, i_s_list, r_list, h_list):
+    # -----------------------------------------------------------------
+    # This function calculates the course hours and cost of enrollment.  It has five parameters: 
+    #   •	i_s_list is the list of in state students
+    #   •	r_list is the list of class rosters
+    #   •	h_list is the credit hours of each class 
+    #This function calculates the bill based on $225 per credit hour for 
+    # in-state students and $850 per credit hour for out-of-state students. 
+    # After calculating the bill, the function returns the total number of 
+    # credit hours and the total cost of enrollment.
+    # -----------------------------------------------------------------
     enrollment_price = 0
     # set tuition prices
     if str(id) in i_s_list:
